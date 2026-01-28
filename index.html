@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+    WizyBot - AI Shopping Assistant UI
+    
+    Deployment Instructions:
+    1. Push this folder to GitHub
+    2. Go to vercel.com and import the repository
+    3. Click Deploy
+    
+    Or use Vercel CLI:
+    - npm i -g vercel
+    - cd wizybot-ui
+    - vercel
+    
+    Backend: https://wizybot-fullstack.onrender.com
+    Author: Daniel Ballesteros
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WizyBot - Tu asistente de compras inteligente con IA">
+    <meta name="author" content="Daniel Ballesteros">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <title>WizyBot - Asistente de Compras Inteligente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">🤖</div>
+                <h1>Wizy<span>Bot</span></h1>
+            </div>
+            <div class="header-actions">
+                <button class="clear-chat-btn" onclick="clearChat()">🗑️ Limpiar Chat</button>
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span id="statusText">Conectando...</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="chat-container">
+            <div class="messages-container" id="messagesContainer">
+                <div class="welcome-message" id="welcomeMessage">
+                    <h2>¡Hola! Soy WizyBot 👋</h2>
+                    <p>Tu asistente de compras inteligente. Puedo ayudarte a encontrar productos y convertir monedas.</p>
+                    
+                    <div class="example-queries">
+                        <div class="example-query" onclick="sendExampleQuery('Necesito un regalo tecnológico para mi papá')">
+                            <div class="example-query-icon">🎁</div>
+                            <div class="example-query-text">Necesito un regalo tecnológico para mi papá</div>
+                        </div>
+                        <div class="example-query" onclick="sendExampleQuery('Muéstrame audífonos inalámbricos')">
+                            <div class="example-query-icon">🎧</div>
+                            <div class="example-query-text">Muéstrame audífonos inalámbricos</div>
+                        </div>
+                        <div class="example-query" onclick="sendExampleQuery('Convierte 100 USD a EUR')">
+                            <div class="example-query-icon">💱</div>
+                            <div class="example-query-text">Convierte 100 USD a EUR</div>
+                        </div>
+                        <div class="example-query" onclick="sendExampleQuery('Busco una laptop para trabajar')">
+                            <div class="example-query-icon">💻</div>
+                            <div class="example-query-text">Busco una laptop para trabajar</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="message-avatar">🤖</div>
+                    <div class="typing-dots">
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="error-message" id="errorMessage"></div>
+                <div class="input-wrapper">
+                    <textarea 
+                        class="input-field" 
+                        id="userInput" 
+                        placeholder="Escribe tu pregunta aquí..."
+                        rows="1"
+                    ></textarea>
+                    <button class="send-button" id="sendButton" onclick="sendMessage()">
+                        <span id="sendButtonText">Enviar</span>
+                        <span id="sendButtonIcon">➤</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>WizyBot © 2026 - Creado por Daniel Ballesteros | Asistente de Compras con IA</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
