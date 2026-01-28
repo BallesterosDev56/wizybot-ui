@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <!--
     WizyBot - AI Shopping Assistant UI
-    
+
     Deployment Instructions:
     1. Push this folder to GitHub
     2. Go to vercel.com and import the repository
     3. Click Deploy
-    
+
     Or use Vercel CLI:
     - npm i -g vercel
     - cd wizybot-ui
     - vercel
-    
+
     Backend: https://wizybot-fullstack.onrender.com
     Author: Daniel Ballesteros
 -->
@@ -49,7 +49,7 @@
                 <div class="welcome-message" id="welcomeMessage">
                     <h2>WizyBot - Test Interface</h2>
                     <p>Technical Assessment Test Cases</p>
-                    
+
                     <div class="test-queries">
                         <button class="test-button" onclick="sendTestQuery('I am looking for a phone')">
                             📱 Test 1: I am looking for a phone
@@ -61,7 +61,7 @@
                             ⌚ Test 3: How much does a watch cost?
                         </button>
                         <button class="test-button" onclick="sendTestQuery('What is the price of the watch in Euros')">
-                            💶 Test 4: What is the price of the watch in Euros
+                            💶 Test 4: Do you have the product Zenithen Butterfly Folding Chair ?
                         </button>
                         <button class="test-button" onclick="sendTestQuery('How many Canadian Dollars are 350 Euros')">
                             💱 Test 5: How many Canadian Dollars are 350 Euros
@@ -82,10 +82,10 @@
             <div class="input-container">
                 <div class="error-message" id="errorMessage"></div>
                 <div class="input-wrapper">
-                    <input 
+                    <input
                         type="text"
-                        class="input-field" 
-                        id="userInput" 
+                        class="input-field"
+                        id="userInput"
                         placeholder="Type custom query here or use test buttons above..."
                     />
                     <button class="send-button" id="sendButton" onclick="sendMessage()">
