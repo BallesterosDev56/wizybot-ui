@@ -28,12 +28,12 @@ async function checkServerStatus() {
         const response = await fetch(API_HEALTH_URL);
         if (response.ok) {
             const data = await response.json();
-            statusText.textContent = 'En línea';
+            statusText.textContent = 'Online';
             console.log('Backend status:', data);
         }
     } catch (error) {
-        statusText.textContent = 'Desconectado';
-        showError('No se puede conectar al servidor. Intenta más tarde.');
+        statusText.textContent = 'Disconnected';
+        showError('Cannot connect to server. Please try again later.');
         console.error('Server connection error:', error);
     }
 }
@@ -99,7 +99,7 @@ async function sendMessage() {
         });
 
         if (!response.ok) {
-            throw new Error(`Error del servidor: ${response.status}`);
+            throw new Error(`Server error: ${response.status}`);
         }
 
         const data = await response.json();
@@ -114,12 +114,12 @@ async function sendMessage() {
         hideTyping();
         console.error('Error:', error);
         
-        let errorMsg = 'Lo siento, hubo un error al procesar tu solicitud. ';
+        let errorMsg = 'Sorry, there was an error processing your request. ';
         
         if (error.message.includes('fetch') || error.message.includes('Failed to fetch')) {
-            errorMsg += 'No se pudo conectar al servidor. Por favor, intenta de nuevo en unos momentos.';
+            errorMsg += 'Could not connect to the server. Please try again in a few moments.';
         } else {
-            errorMsg += 'Por favor, intenta de nuevo.';
+            errorMsg += 'Please try again.';
         }
         
         showError(errorMsg);
@@ -179,7 +179,7 @@ function setProcessing(processing) {
         sendButtonText.textContent = '';
         sendButtonIcon.innerHTML = '<span class="spinner"></span>';
     } else {
-        sendButtonText.textContent = 'Enviar';
+        sendButtonText.textContent = 'Send';
         sendButtonIcon.textContent = '➤';
     }
 }
@@ -208,7 +208,7 @@ function scrollToBottom() {
 
 // Clear chat function
 function clearChat() {
-    if (confirm('¿Estás seguro de que quieres limpiar el chat?')) {
+    if (confirm('Are you sure you want to clear the chat?')) {
         // Remove all messages except typing indicator
         const messages = messagesContainer.querySelectorAll('.message');
         messages.forEach(msg => msg.remove());

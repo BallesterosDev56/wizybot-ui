@@ -15,15 +15,15 @@
     Backend: https://wizybot-fullstack.onrender.com
     Author: Daniel Ballesteros
 -->
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WizyBot - Tu asistente de compras inteligente con IA">
+    <meta name="description" content="WizyBot - Your intelligent AI shopping assistant">
     <meta name="author" content="Daniel Ballesteros">
     <meta name="theme-color" content="#6366f1">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    <title>WizyBot - Asistente de Compras Inteligente</title>
+    <title>WizyBot - Intelligent Shopping Assistant</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -34,10 +34,10 @@
                 <h1>Wizy<span>Bot</span></h1>
             </div>
             <div class="header-actions">
-                <button class="clear-chat-btn" onclick="clearChat()">🗑️ Limpiar Chat</button>
+                <button class="clear-chat-btn" onclick="clearChat()">🗑️ Clear Chat</button>
                 <div class="status-indicator">
                     <span class="status-dot"></span>
-                    <span id="statusText">Conectando...</span>
+                    <span id="statusText">Connecting...</span>
                 </div>
             </div>
         </div>
@@ -47,25 +47,25 @@
         <div class="chat-container">
             <div class="messages-container" id="messagesContainer">
                 <div class="welcome-message" id="welcomeMessage">
-                    <h2>¡Hola! Soy WizyBot 👋</h2>
-                    <p>Tu asistente de compras inteligente. Puedo ayudarte a encontrar productos y convertir monedas.</p>
+                    <h2>Hello! I'm WizyBot 👋</h2>
+                    <p>Your intelligent shopping assistant. I can help you find products and convert currencies.</p>
                     
                     <div class="example-queries">
-                        <div class="example-query" onclick="sendExampleQuery('Necesito un regalo tecnológico para mi papá')">
+                        <div class="example-query" onclick="sendExampleQuery('I need a tech gift for my dad')">
                             <div class="example-query-icon">🎁</div>
-                            <div class="example-query-text">Necesito un regalo tecnológico para mi papá</div>
+                            <div class="example-query-text">I need a tech gift for my dad</div>
                         </div>
-                        <div class="example-query" onclick="sendExampleQuery('Muéstrame audífonos inalámbricos')">
+                        <div class="example-query" onclick="sendExampleQuery('Show me wireless headphones')">
                             <div class="example-query-icon">🎧</div>
-                            <div class="example-query-text">Muéstrame audífonos inalámbricos</div>
+                            <div class="example-query-text">Show me wireless headphones</div>
                         </div>
-                        <div class="example-query" onclick="sendExampleQuery('Convierte 100 USD a EUR')">
+                        <div class="example-query" onclick="sendExampleQuery('Convert 100 USD to EUR')">
                             <div class="example-query-icon">💱</div>
-                            <div class="example-query-text">Convierte 100 USD a EUR</div>
+                            <div class="example-query-text">Convert 100 USD to EUR</div>
                         </div>
-                        <div class="example-query" onclick="sendExampleQuery('Busco una laptop para trabajar')">
+                        <div class="example-query" onclick="sendExampleQuery('I need a laptop for work')">
                             <div class="example-query-icon">💻</div>
-                            <div class="example-query-text">Busco una laptop para trabajar</div>
+                            <div class="example-query-text">I need a laptop for work</div>
                         </div>
                     </div>
                 </div>
@@ -86,11 +86,11 @@
                     <textarea 
                         class="input-field" 
                         id="userInput" 
-                        placeholder="Escribe tu pregunta aquí..."
+                        placeholder="Type your question here..."
                         rows="1"
                     ></textarea>
                     <button class="send-button" id="sendButton" onclick="sendMessage()">
-                        <span id="sendButtonText">Enviar</span>
+                        <span id="sendButtonText">Send</span>
                         <span id="sendButtonIcon">➤</span>
                     </button>
                 </div>
@@ -99,7 +99,7 @@
     </main>
 
     <footer>
-        <p>WizyBot © 2026 - Creado por Daniel Ballesteros | Asistente de Compras con IA</p>
+        <p>WizyBot © 2026 - Created by Daniel Ballesteros | AI Shopping Assistant</p>
     </footer>
 
     <script src="/app.js"></script>
