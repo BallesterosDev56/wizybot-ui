@@ -40,23 +40,17 @@ async function checkServerStatus() {
 
 // Setup input listeners
 function setupInputListeners() {
-    // Auto-resize textarea
-    userInput.addEventListener('input', () => {
-        userInput.style.height = 'auto';
-        userInput.style.height = userInput.scrollHeight + 'px';
-    });
-
-    // Send on Enter (Shift+Enter for new line)
+    // Send on Enter
     userInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
+        if (e.key === 'Enter') {
             e.preventDefault();
             sendMessage();
         }
     });
 }
 
-// Send example query
-function sendExampleQuery(query) {
+// Send test query
+function sendTestQuery(query) {
     userInput.value = query;
     sendMessage();
 }
@@ -80,7 +74,6 @@ async function sendMessage() {
 
     // Clear input
     userInput.value = '';
-    userInput.style.height = 'auto';
 
     // Show typing indicator
     showTyping();
@@ -206,9 +199,9 @@ function scrollToBottom() {
     }, 100);
 }
 
-// Clear chat function
-function clearChat() {
-    if (confirm('Are you sure you want to clear the chat?')) {
+// Clear results function
+function clearResults() {
+    if (confirm('Are you sure you want to clear all results?')) {
         // Remove all messages except typing indicator
         const messages = messagesContainer.querySelectorAll('.message');
         messages.forEach(msg => msg.remove());

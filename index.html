@@ -34,7 +34,7 @@
                 <h1>Wizy<span>Bot</span></h1>
             </div>
             <div class="header-actions">
-                <button class="clear-chat-btn" onclick="clearChat()">🗑️ Clear Chat</button>
+                <button class="clear-chat-btn" onclick="clearResults()">🗑️ Clear Results</button>
                 <div class="status-indicator">
                     <span class="status-dot"></span>
                     <span id="statusText">Connecting...</span>
@@ -47,26 +47,25 @@
         <div class="chat-container">
             <div class="messages-container" id="messagesContainer">
                 <div class="welcome-message" id="welcomeMessage">
-                    <h2>Hello! I'm WizyBot 👋</h2>
-                    <p>Your intelligent shopping assistant. I can help you find products and convert currencies.</p>
+                    <h2>WizyBot - Test Interface</h2>
+                    <p>Technical Assessment Test Cases</p>
                     
-                    <div class="example-queries">
-                        <div class="example-query" onclick="sendExampleQuery('I need a tech gift for my dad')">
-                            <div class="example-query-icon">🎁</div>
-                            <div class="example-query-text">I need a tech gift for my dad</div>
-                        </div>
-                        <div class="example-query" onclick="sendExampleQuery('Show me wireless headphones')">
-                            <div class="example-query-icon">🎧</div>
-                            <div class="example-query-text">Show me wireless headphones</div>
-                        </div>
-                        <div class="example-query" onclick="sendExampleQuery('Convert 100 USD to EUR')">
-                            <div class="example-query-icon">💱</div>
-                            <div class="example-query-text">Convert 100 USD to EUR</div>
-                        </div>
-                        <div class="example-query" onclick="sendExampleQuery('I need a laptop for work')">
-                            <div class="example-query-icon">💻</div>
-                            <div class="example-query-text">I need a laptop for work</div>
-                        </div>
+                    <div class="test-queries">
+                        <button class="test-button" onclick="sendTestQuery('I am looking for a phone')">
+                            📱 Test 1: I am looking for a phone
+                        </button>
+                        <button class="test-button" onclick="sendTestQuery('I am looking for a present for my dad')">
+                            🎁 Test 2: I am looking for a present for my dad
+                        </button>
+                        <button class="test-button" onclick="sendTestQuery('How much does a watch cost?')">
+                            ⌚ Test 3: How much does a watch cost?
+                        </button>
+                        <button class="test-button" onclick="sendTestQuery('What is the price of the watch in Euros')">
+                            💶 Test 4: What is the price of the watch in Euros
+                        </button>
+                        <button class="test-button" onclick="sendTestQuery('How many Canadian Dollars are 350 Euros')">
+                            💱 Test 5: How many Canadian Dollars are 350 Euros
+                        </button>
                     </div>
                 </div>
 
@@ -83,12 +82,12 @@
             <div class="input-container">
                 <div class="error-message" id="errorMessage"></div>
                 <div class="input-wrapper">
-                    <textarea 
+                    <input 
+                        type="text"
                         class="input-field" 
                         id="userInput" 
-                        placeholder="Type your question here..."
-                        rows="1"
-                    ></textarea>
+                        placeholder="Type custom query here or use test buttons above..."
+                    />
                     <button class="send-button" id="sendButton" onclick="sendMessage()">
                         <span id="sendButtonText">Send</span>
                         <span id="sendButtonIcon">➤</span>
@@ -99,7 +98,7 @@
     </main>
 
     <footer>
-        <p>WizyBot © 2026 - Created by Daniel Ballesteros | AI Shopping Assistant</p>
+        <p>WizyBot Test Interface - Technical Assessment | Daniel Ballesteros © 2026</p>
     </footer>
 
     <script src="/app.js"></script>
